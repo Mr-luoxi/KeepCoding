@@ -11,8 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^2.9.6",
-    "vite-plugin-vue2": "^2.0.0",
-    "vue-template-compiler": "2.6.14"
+    "vite": "^3.2.4"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^3.2.0"
   }
 }

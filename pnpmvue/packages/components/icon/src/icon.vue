@@ -1,10 +1,10 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-04-30 22:41:49
- * @LastEditTime: 2022-05-05 18:39:02
- * @LastEditors: luoxi
+ * @LastEditTime: 2022-11-23 20:56:08
+ * @LastEditors: luo xi
  * @Description: 
- * @FilePath: /pnpmvue/packages/components/icon/src/icon.vue
+ * @FilePath: /KeepCoding/pnpmvue/packages/components/icon/src/icon.vue
  * 可以输入预定的版权声明、个性签名、空行等
 -->
 <template>
@@ -15,7 +15,7 @@
 
 
 <script>
-import { defineComponent,computed } from "@vue/composition-api";
+import { defineComponent } from "vue";
 import iconProps from "./icon";
 export default defineComponent({
   name: "iep-icon",

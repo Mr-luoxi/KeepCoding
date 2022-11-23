@@ -23,7 +23,7 @@
     "@iep-plus/play": "workspace:^1.0.0",
     "@iep-plus/theme-chalk": "workspace:^1.0.0",
     "@iep-plus/utils": "workspace:^1.0.0",
-    "vue": "2.6.14"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "chalk": "4.1.1",
