@@ -1,0 +1,46 @@
+@use './mixins/mixins.scss'as *;
+
+@font-face {
+  font-family: "iep-ui-icons";
+  /* Project id 2464910 */
+  src: url('./fonts/iconfont.woff2') format('woff2'),
+    url('./fonts/iconfont.woff') format('woff'),
+    url('./fonts/iconfont.ttf') format('truetype');
+}
+
+[class^='#{$namespace}-icon'],
+[class*='#{$namespace}-icon'] {
+  font-family: "iep-ui-icons" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$namespace}-icon-phone:before {
+  content: "\e7b7";
+}
+
+.#{$namespace}-icon-phone-copy:before {
+  content: "\e7b8";
+}
+
+.#{$namespace}-icon-maiche:before {
+  content: "\e6e9";
+}
+
+.#{$namespace}-icon-iconfontarrowdown:before {
+  content: "\e60e";
+}
+
+.#{$namespace}-icon-iconfontzhizuobiaozhun06:before {
+  content: "\e605";
+}
+
+.#{$namespace}-icon-shouye:before {
+  content: "\e60b";
+}
+
+.#{$namespace}-icon-sousuo:before {
+  content: "\e635";
+}

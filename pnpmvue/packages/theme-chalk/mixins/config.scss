@@ -1,0 +1,13 @@
+$namespace:'iep';
+$element-separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
+/**
+* 命名规范 BEM规范
+
+<div class="z-cell">
+    <div class="z-cell__label"></div>
+    <div class="z-cell__value is_check"></div>
+</div>
+
+*/
