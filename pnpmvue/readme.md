@@ -242,3 +242,5 @@
 #### 遇到的问题
 - 安装依赖的时候，许多依赖都是默认为vue3版本，导致打包失败，例如：rollup-plugin-vue的6.0.x版本，打包之后会报错createElementBlock was not found，主要是因为我们使用的vue2没有这个方法。
 - 在组件中打包的时候，遇到Cannot use import statement outside a module问题，主要是es6语法问题,通过配置@babel/env和@babel/plugin-transform-runtime解决问题。
+<!-- 配置git 代理 -->
+<!-- git config --global http.proxy 127.0.0.1:11087 -->
