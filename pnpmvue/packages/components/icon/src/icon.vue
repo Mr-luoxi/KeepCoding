@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-04-30 22:41:49
- * @LastEditTime: 2022-11-23 20:56:08
+ * @LastEditTime: 2022-11-23 21:06:35
  * @LastEditors: luo xi
  * @Description: 
  * @FilePath: /KeepCoding/pnpmvue/packages/components/icon/src/icon.vue
@@ -15,7 +15,7 @@
 
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 import iconProps from "./icon";
 export default defineComponent({
   name: "iep-icon",
