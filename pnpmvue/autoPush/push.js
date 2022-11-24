@@ -25,6 +25,7 @@ const publish = async () => {
   console.log(options);
   const branch = options.branch || "master";
   const log = options.log || "auto push at" + new Date();
+  console.log(branch, log,'++++')
   try {
     await exec("git status");
     await exec("git add .");
