@@ -14,10 +14,12 @@ importers:
       '@iep-plus/theme-chalk': workspace:^1.0.0
       '@iep-plus/utils': workspace:^1.0.0
       chalk: 4.1.1
+      commander: ^9.4.1
       consola: ^2.15.3
       fast-glob: ^3.2.11
       rimraf: ^3.0.2
       sass: ^1.51.0
+      shelljs: ^0.8.5
       sucrase: ^3.21.0
       vue: ^3.2.45
     dependencies:
@@ -30,6 +32,8 @@ importers:
       '@iep-plus/play': link:play
       '@iep-plus/theme-chalk': link:packages/theme-chalk
       '@iep-plus/utils': link:packages/utils
+      commander: registry.npmmirror.com/commander/9.4.1
+      shelljs: registry.npmmirror.com/shelljs/0.8.5
       vue: registry.npmmirror.com/vue/3.2.45
     devDependencies:
       chalk: registry.npmmirror.com/chalk/4.1.1
@@ -2493,6 +2497,13 @@ packages:
     version: 4.1.1
     engines: {node: '>= 6'}
     dev: true
+
+  registry.npmmirror.com/commander/9.4.1:
+    resolution: {integrity: sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/-/commander-9.4.1.tgz}
+    name: commander
+    version: 9.4.1
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
 
   registry.npmmirror.com/commondir/1.0.1:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commondir/-/commondir-1.0.1.tgz}
@@ -5410,6 +5421,18 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       kind-of: registry.npmmirror.com/kind-of/6.0.3
+    dev: false
+
+  registry.npmmirror.com/shelljs/0.8.5:
+    resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/shelljs/-/shelljs-0.8.5.tgz}
+    name: shelljs
+    version: 0.8.5
+    engines: {node: '>=4'}
+    hasBin: true
+    dependencies:
+      glob: registry.npmmirror.com/glob/7.2.3
+      interpret: registry.npmmirror.com/interpret/1.4.0
+      rechoir: registry.npmmirror.com/rechoir/0.6.2
     dev: false
 
   registry.npmmirror.com/snapdragon-node/2.1.1:

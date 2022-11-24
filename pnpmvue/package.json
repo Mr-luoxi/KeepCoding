@@ -8,7 +8,10 @@
     "dev": "pnpm -C play dev",
     "build": "pnpm -C build start",
     "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
-    "clean:dist": "rimraf dist"
+    "clean:dist": "rimraf dist",
+    "ci:build": "node autoPush/build",
+    "push": "node autoPush/push",
+    "ci": "node autoPush/ci"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +26,8 @@
     "@iep-plus/play": "workspace:^1.0.0",
     "@iep-plus/theme-chalk": "workspace:^1.0.0",
     "@iep-plus/utils": "workspace:^1.0.0",
+    "commander": "^9.4.1",
+    "shelljs": "^0.8.5",
     "vue": "^3.2.45"
   },
   "devDependencies": {
