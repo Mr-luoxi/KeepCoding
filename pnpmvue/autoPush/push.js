@@ -1,7 +1,7 @@
 /*
  * @Author: luo xi
  * @Date: 2022-11-24 20:57:20
- * @LastEditTime: 2022-11-24 21:30:16
+ * @LastEditTime: 2022-11-24 21:31:55
  * @LastEditors: luo xi
  * @Description:
  * @FilePath: /KeepCoding/pnpmvue/autoPush/push.js
@@ -30,7 +30,7 @@ const publish = async () => {
     await exec("git add .");
     await exec("git commit -m" + log + '##autoPush');
     await exec("git pull origin master");
-    await exec("git push fork" + branch);
+    await exec("git push origin" + branch);
     console.log('git finished');
   } catch (e) {
     console.log("push failed" + e);
