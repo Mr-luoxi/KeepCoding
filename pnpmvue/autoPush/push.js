@@ -30,7 +30,7 @@ const publish = async () => {
     await exec("git status");
     await exec("git add .");
     await exec("git commit -m" + log + '##autoPush');
-    await exec("git pull origin master");
+    await exec("git pull origin" + branch);
     await exec("git push origin" + branch);
     console.log('git finished');
   } catch (e) {
