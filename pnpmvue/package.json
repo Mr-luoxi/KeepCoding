@@ -23,11 +23,13 @@
     "@babel/register": "^7.17.7",
     "@iep-plus/build": "workspace:^1.0.0",
     "@iep-plus/components": "workspace:^1.0.0",
+    "@iep-plus/hooks": "workspace:^1.0.0",
     "@iep-plus/play": "workspace:^1.0.0",
     "@iep-plus/theme-chalk": "workspace:^1.0.0",
     "@iep-plus/utils": "workspace:^1.0.0",
     "commander": "^9.4.1",
     "shelljs": "^0.8.5",
+    "unplugin-vue-define-options": "^1.0.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
