@@ -23,7 +23,7 @@ const publish = async () => {
   program.parse(process.argv);
   const options = program.opts();
   console.log(options);
-  const branch = options.branch || "master";
+  const branch = options.branch || "main";
   const log = options.log || "auto push at" + new Date();
   console.log(branch, log,'++++')
   try {
