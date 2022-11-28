@@ -7,4 +7,5 @@
 ### git checkout
 - 切换分支
 
-- 
+### git merge
+- 合并分支
