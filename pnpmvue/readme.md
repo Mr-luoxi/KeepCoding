@@ -244,3 +244,8 @@
 - 在组件中打包的时候，遇到Cannot use import statement outside a module问题，主要是es6语法问题,通过配置@babel/env和@babel/plugin-transform-runtime解决问题。
 <!-- 配置git 代理 -->
 <!-- git config --global http.proxy 127.0.0.1:11087 -->
+
+### 亮点：
+- 1.调试技巧
+- 2.使用设计模式或者算法解决什么问题
+- 3.解决项目中 遇到的疑难问题
