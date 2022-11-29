@@ -3,9 +3,84 @@
 /*
 * 引入config
 */
-@use 'config' as *;
+@use "config" as *;
+@use "function" as *;
 
 /*
 * 将config暴露给全局使用
 */
-@forward 'config';
+@forward "config";
+@forward "function";
+
+/**
+ * @description: bem 规范
+ * @return {*}
+ */
+
+// BEM
+// iep-dialog
+@mixin b($block) {
+  $B: $namespace + "-" + $block !global;
+  // @debug '#{$B}';
+  .#{$B} {
+    @content;
+  }
+}
+
+// iep-dialog__footer
+@mixin e($element) {
+  // 传入元素
+  $E: $element !global;
+  // & 父级元素
+  $separator: &;
+  $currentSeparator: "";
+  @each $unit in $element {
+    $currentSeparator: #{$currentSeparator + "." + $B + $element-separator + $unit + ","};
+  }
+  // .iep-icon__demo
+  @debug "#{$currentSeparator}";
+  @debug "#{hitAllSpecialNestRule($separator)}";
+  @if hitAllSpecialNestRule($separator) {
+    // The @at-root directive causes one or more rules to be emitted
+    //  at the root of the document, rather than being nested beneath
+    // their parent selectors. It can either be used with a single inline selector:
+    @at-root {
+      #{$separator} {
+        #{$currentSeparator} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSeparator} {
+        @content;
+      }
+    }
+  }
+}
+
+// iep-dialog__footer--red
+@mixin m($modifier) {
+  // center
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + $selector + $modifier-separator + $unit + ","};
+  }
+  @debug "#{$currentSelector}";
+  // .iep-icon__demo, .iep-icon__test--center,
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+// is-light is-dark
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}

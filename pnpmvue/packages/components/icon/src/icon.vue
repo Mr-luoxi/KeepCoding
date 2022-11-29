@@ -1,14 +1,14 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-04-30 22:41:49
- * @LastEditTime: 2022-11-25 11:33:55
+ * @LastEditTime: 2022-11-29 21:49:12
  * @LastEditors: luo xi
  * @Description: 
  * @FilePath: /KeepCoding/pnpmvue/packages/components/icon/src/icon.vue
  * 可以输入预定的版权声明、个性签名、空行等
 -->
 <template>
-  <i :class="ns.b()" :style="style" v-bind="$attrs">
+  <i class="iep-icon__demo" :class="ns.b()" :style="style" v-bind="$attrs">
     <slot>iep-icon</slot>
   </i>
 </template>

@@ -1,0 +1,56 @@
+@use 'config';
+
+// BEM support Func
+// 把选择器转换成字符串
+@function selectorToString($selector) {
+  // The inspect() function returns a string representation of $value.
+  $selector: inspect($selector);
+  // The str-slice() function returns the slice of a string starting at the specified index and ending at the specified index.
+  // 切割字符串 str-slice($string, $start-at, $end-at)
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+
+// 是否包含--
+@function containsModifier($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, '.'+ config.$modifier-separator) {
+    @return true;
+  }
+
+  @else {
+    @return false;
+  }
+}
+
+// 是否包含 is-
+@function containWhenFlag($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, '.'+ config.$state-prefix) {
+    @return true;
+  }
+
+  @else {
+    @return false;
+  }
+}
+
+// 是否包含 ':'
+@function containPseudoClass($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, ':') {
+    @return true;
+  }
+
+  @else {
+    @return false;
+  }
+}
+
+// 是否包含-- is- :
+@function hitAllSpecialNestRule($selector) {
+  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector)
+}

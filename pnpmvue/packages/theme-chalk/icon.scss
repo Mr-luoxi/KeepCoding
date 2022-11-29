@@ -1,15 +1,14 @@
-@use './mixins/mixins.scss'as *;
+@use "./mixins/mixins.scss" as *;
 
 @font-face {
   font-family: "iep-ui-icons";
   /* Project id 2464910 */
-  src: url('./fonts/iconfont.woff2') format('woff2'),
-    url('./fonts/iconfont.woff') format('woff'),
-    url('./fonts/iconfont.ttf') format('truetype');
+  src: url("./fonts/iconfont.woff2") format("woff2"), url("./fonts/iconfont.woff") format("woff"),
+    url("./fonts/iconfont.ttf") format("truetype");
 }
 
-[class^='#{$namespace}-icon'],
-[class*='#{$namespace}-icon'] {
+[class^="#{$namespace}-icon"],
+[class*="#{$namespace}-icon"] {
   font-family: "iep-ui-icons" !important;
   font-size: 16px;
   font-style: normal;
@@ -43,4 +42,16 @@
 
 .#{$namespace}-icon-sousuo:before {
   content: "\e635";
+}
+
+@include b(icon) {
+  margin-left: 10px;
+  @include e(demo) {
+    color: "red";
+    font-weight: 500;
+    cursor: pointer;
+    @include m(center){
+      
+    }
+  }
 }
