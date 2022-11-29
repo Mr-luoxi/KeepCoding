@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-04-30 22:41:49
- * @LastEditTime: 2022-11-29 21:49:12
+ * @LastEditTime: 2022-11-29 22:23:25
  * @LastEditors: luo xi
  * @Description: 
  * @FilePath: /KeepCoding/pnpmvue/packages/components/icon/src/icon.vue
@@ -9,7 +9,7 @@
 -->
 <template>
   <i class="iep-icon__demo" :class="ns.b()" :style="style" v-bind="$attrs">
-    <slot>iep-icon</slot>
+    <slot />
   </i>
 </template>
 
