@@ -1,10 +1,10 @@
 /*
  * @Author: luo xi
  * @Date: 2022-10-29 23:53:40
- * @LastEditTime: 2022-10-30 10:04:12
+ * @LastEditTime: 2022-11-29 20:00:55
  * @LastEditors: luo xi
  * @Description:
- * @FilePath: /interview-2022/macOs/my-vitecamp-app/src/router/route.async.ts
+ * @FilePath: /KeepCoding/projects/mac-os/src/router/route.async.ts
  * 可以输入预定的版权声明、个性签名、空行等
  */
 // 需要鉴权的业务路由
@@ -18,7 +18,8 @@ const asyncRoutes: Array<RouteRecordRaw> = [
       title: '',
       icon: '',
     },
-    component: () => import('@/views/home/index.vue'),
+    redirect: '/bootup',
+    // component: () => import('@/views/home/index.vue'),
   },
   {
     path: '/process',
