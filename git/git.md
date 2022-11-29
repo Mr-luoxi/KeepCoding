@@ -1,4 +1,5 @@
 ## 学习工具:https://learngitbranching.js.org/?locale=zh_CN
+- show solution  查看答案
 ### git commit
 - 提交信息，并且提交相关的日志信息
 
