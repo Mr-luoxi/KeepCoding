@@ -31,3 +31,8 @@
 
 ### 交互式的 rebase
 - git rebase -i HEAD~4
+- git rebase main feature
+
+### tag 打标签，由于标签在代码库中起着“锚点”的作用
+- 命令格式: git tag -a 标签名 -m "附注信息"
+- 例如：git tag -a v0.1.0 -m "完成了文章a和文章b的撰写，耗费时间2h，感觉棒棒的！"
