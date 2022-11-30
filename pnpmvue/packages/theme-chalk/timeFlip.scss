@@ -1,0 +1,149 @@
+@use "./mixins/mixins.scss" as *;
+
+@include b("flip") {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 100px;
+  line-height: 100px;
+  border: solid 1px #000;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 66px;
+  color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  &-down {
+    .iep-flip--front::before {
+      z-index: 3;
+    }
+    .iep-flip--back::after {
+      z-index: 2;
+      transform-origin: 50% 0;
+      // perspective 透视函数定义了到 z=0 的坐标轴，使用者能够得到 3D 定位元素的透视，每个 3D 元素在 Z 轴的位置大于零意味着离使用者更近，因此会变得更大
+      transform: perspective(160px) rotateX(180deg);
+    }
+    .iep-flip--front::after,
+    .iep-flip--back::before {
+      z-index: 1;
+    }
+  }
+
+  &-up {
+    .iep-flip--back::after {
+      z-index: 3;
+    }
+    .iep-flip--front::before {
+      z-index: 2;
+      // 这个时候的 x轴还是中点50% y轴线是 高度100%
+      transform-origin: 50% 100%;
+      // perspective 透视函数定义了到 z=0 的坐标轴，使用者能够得到 3D 定位元素的透视，每个 3D 元素在 Z 轴的位置大于零意味着离使用者更近，因此会变得更大
+      transform: perspective(160px) rotateX(-180deg);
+    }
+    .iep-flip--front::after,
+    .iep-flip--back::before {
+      z-index: 1;
+    }
+  }
+
+  &-digital {
+    color: #fff;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: #000;
+      overflow: hidden;
+    }
+    &::before {
+      top: 0;
+      bottom: 50%;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid #666;
+    }
+    &::after {
+      top: 50%;
+      bottom: 0;
+      border-radius: 0 0 10px 10px;
+      // 设置正中间的行 放置在高度为0
+      line-height: 0;
+    }
+  }
+
+  &-number0::before,
+  &-number0::after {
+    content: "0";
+  }
+  &-number1::before,
+  &-number1::after {
+    content: "1";
+  }
+  &-number2::before,
+  &-number2::after {
+    content: "2";
+  }
+  &-number3::before,
+  &-number3::after {
+    content: "3";
+  }
+  &-number4::before,
+  &-number4::after {
+    content: "4";
+  }
+  &-number5::before,
+  &-number5::after {
+    content: "5";
+  }
+  &-number6::before,
+  &-number6::after {
+    content: "6";
+  }
+  &-number7::before,
+  &-number7::after {
+    content: "7";
+  }
+  &-number8::before,
+  &-number8::after {
+    content: "8";
+  }
+  &-number9::before,
+  &-number9::after {
+    content: "9";
+  }
+
+  @include when(loading) {
+    animation: rotating 2s linear infinite;
+  }
+
+  &-go#{&}-down{
+    .iep-flip--front::before {
+      transform-origin: 50% 100%;
+      animation: frontFlipDown 0.6s ease-in-out both;
+      box-shadow: 0 -2px 6px rgba(255, 255, 255, .3);
+      backface-visibility: hidden;
+    }
+    .iep-flip--back::after {
+      animation: backFlipDown 0.6s ease-in-out both;
+    }
+  }
+
+  @keyframes frontFlipDown {
+    0% {
+      transform: perspective(160px) rotateX(0deg);
+    }
+    100% {
+      transform: perspective(160px) rotateX(-180px);
+    }
+  }
+  @keyframes backFlipDown {
+    0% {
+      transform: perspective(160px) rotateX(180px);
+    }
+    100% {
+      transform: perspective(160px) rotateX(0);
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<!--
+ * @Author: luo xi
+ * @Date: 2022-04-30 22:41:49
+ * @LastEditTime: 2022-11-30 23:41:27
+ * @LastEditors: luo xi
+ * @Description: 参考https://juejin.cn/post/7169852766452613150
+ * @FilePath: /KeepCoding/pnpmvue/packages/components/timeFlip/src/timeFlip.vue
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
+<template>
+  <div
+    :class="[
+      ns.b(),
+      isTopFlip ? ns.b('up') : ns.b('down'),
+      isFlipping && ns.b('go'),
+    ]"
+    :style="style"
+    v-bind="$attrs"
+  >
+    <div
+      :class="[ns.b('digital'), ns.m('front'), ns.b('number' + count)]"
+    ></div>
+    <div
+      :class="[ns.b('digital'), ns.m('back'), ns.b('number' + nextCount)]"
+    ></div>
+  </div>
+  <button @click="flipDown">向下翻+1</button>
+  <button @click="flipUp">向上翻-1</button>
+</template>
+
+<script setup>
+import { computed, ref } from "vue";
+import { useNamespace } from "@iep-plus/hooks";
+// import iconProps from "./icon";
+// 使用unplugin-vue-define-options 来注册组件
+defineOptions({
+  name: "TimeFlip",
+  inheritAttrs: false,
+});
+// const props = defineProps(iconProps);
+// 当前数字0
+const count = ref(0);
+// 下一个数字 1
+const nextCount = ref(1);
+// 是否正在翻转
+const isFlipping = ref(false);
+// 向上翻还是向下
+const isTopFlip = ref(false);
+
+const ns = useNamespace("flip");
+const style = computed(() => {});
+// 向下翻+1
+const flipDown = () => {
+  if (isFlipping.value) {
+    return;
+  }
+  isTopFlip.value = false;
+  nextCount.value = count.value >= 9 ? 0 : count.value + 1;
+  isFlipping.value = true;
+  setTimeout(function () {
+    isFlipping.value = false;
+  }, 1000);
+  count.value = nextCount.value;
+};
+// 向上翻-1
+const flipUp = () => {
+  if (isFlipping.value) {
+    return;
+  }
+  isTopFlip.value = true;
+  nextCount.value = count.value <= 0 ? 9 : count.value - 1;
+  isFlipping.value = true;
+  setTimeout(function () {
+    isFlipping.value = false;
+  }, 1000);
+  count.value = nextCount.value;
+};
+</script>
