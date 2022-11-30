@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-11-30 08:40:23
- * @LastEditTime: 2022-11-30 11:05:14
+ * @LastEditTime: 2022-11-30 13:10:32
  * @LastEditors: luo xi
  * @Description: 
  * @FilePath: /KeepCoding/css/css权威指南/01-css和文档/01-html引入css.html
@@ -34,22 +34,53 @@
   <p>CSS：<span>层叠样式表，目标是提供一个简单的声明式样式语言</span></p>
   <p>
     元素的类型分为：
-    <p>
-      1. 置换元素和非置换元素 <br/>
-      <span>置换元素：用来置换元素内容的部分不由文档内容直接表示</span>
-      <span>非置换元素：元素内部内容显示</span>
-    </p>
-    <p>
-      2. 行内元素和快级元素 <br/>
-      <span>行内元素：填满父级元素内容区域的框，旁边不能有其他元素</span>
-      <span>快级元素：在一行文本内生成元素框，不打断所在行。快级元素不能出现在行内元素中。</span>
-    </p>
+  <p>
+    1. 置换元素和非置换元素 <br />
+    <span>置换元素：用来置换元素内容的部分不由文档内容直接表示</span>
+    <span>非置换元素：元素内部内容显示</span>
+  </p>
+  <p>
+    2. 行内元素和快级元素 <br />
+    <span>行内元素：填满父级元素内容区域的框，旁边不能有其他元素</span>
+    <span>快级元素：在一行文本内生成元素框，不打断所在行。快级元素不能出现在行内元素中。</span>
+  </p>
   </p>
   <p>
     html中引入css的方式
-    <p>
-      1.外部样式表（）
-    </p>
+  <p>
+    1.外部样式表（external stylesheet），
+    <link rel="stylesheet" href="" type="text/css" media="all">
+  <p>rel：是relation的简称，这里指定的关系是stylesheet</p>
+  <p>type：link标签加载数据类型</p>
+  <p>href：样式表的地址，支持相对地址和绝对地址</p>
+  <p>media：媒体类型和具有功能，是一个或者多个媒体描述符。</p>
+  </p>
+  <p>
+    2.文档样式表或嵌入式样式表
+    <xmp>
+      <style type="text/css"></style>
+    </xmp>
+  </p>
+  <p>
+    3.@import 指令，需要放在style样式表，最前面
+    <xmp>
+      <style>
+        @import url(sheet.css);
+        h1 {
+          color: green;
+        }
+      </style>
+    </xmp>
+  </p>
+  <p>
+    4.HTTP链接，通过后端配置注入
+  </p>
+  <p>
+    5.行内样式
+    <xmp>
+      <p style="font-size:18px"></p>
+    </xmp>
+  </p>
   </p>
 
 </body>

@@ -1,0 +1,73 @@
+<!--
+ * @Author: luo xi
+ * @Date: 2022-11-30 08:40:23
+ * @LastEditTime: 2022-11-30 13:24:11
+ * @LastEditors: luo xi
+ * @Description: 
+ * @FilePath: /KeepCoding/css/css权威指南/01-css和文档/02-媒体查询和特性查询.html
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS权威指南</title>
+  <style>
+    span {
+      color: red;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .inline {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <p>媒体查询：通过媒体描述符，根据指定媒体类型的特性选择样式表</p>
+  <p>
+    可以在以下地方使用： <br/>
+    1. link元素的media属性 <br/>
+    2. style元素的media属性 <br/>
+    3. @import声明的媒体描述符部分 <br/>
+    4. @media声明的媒体描述符部分 <br/>
+  <p>
+    简单媒体查询：
+    <xmp>
+      @media all{
+        h1{color:red}
+      }
+    </xmp>
+    all：代表所有媒体类型。print：为有视力的用户打印文档时使用，也在预览打印时使用。screen：在屏幕媒体上使用。
+  </p>
+  <p>
+   媒体描述符：包含一个媒体类型和一个或多个媒体特性列表，特性描述符要放在括号里面。
+   @media all and (min-resolution: 96dpi) {} <br/>
+   逻辑关键词：<br/>
+   1.and：连接两个或多个媒体特性必须同时满足条件，<span>(color) and (orientation:landscape)</span><br/>
+   2.not：只能在媒体查询开头使用，对整个查询取反，<span>not (color) and (orientation:landscape)</span><br/>
+  </p>
+  <p>
+    特性描述符：包含
+    width,min-width,max-width,color,height,min-height,max-height等
+  </p>
+  <p>
+    特性查询：根据用户是否支持特定的css属性及其值来应用一段样式。特性查询也支持逻辑操作。
+    <xmp>
+      @supports (display:grid){
+        section#main{
+          display:grid;
+        }
+      }
+    </xmp>
+  </p>
+</body>
+
+</html>
