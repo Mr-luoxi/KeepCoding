@@ -1,0 +1,116 @@
+<!--
+ * @Author: luo xi
+ * @Date: 2022-12-01 11:30:56
+ * @LastEditTime: 2022-12-01 12:21:26
+ * @LastEditors: luo xi
+ * @Description: 
+ * @FilePath: /KeepCoding/javascript/1-强制类型转换/1.类型转换.html
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <xmp>
+    const a = 1
+    const b = true
+    const c = {}
+    const d = '123'
+    const e = undefined
+    const f = function () {}
+    const g = [1,undefined,function(){},4]
+    const h = {a:2,b:function(){}}
+  </xmp>
+  <p>1.toString：处理非字符串到字符串的强制类型转换，数值、布尔值、对象和字符串值都有toString()方法</p>
+  <xmp>
+    console.log(a.toString(),b.toString(),c.toString(),d.toString()) // 1 true [object Object] 123
+  </xmp>
+  <p>2. JSON.stringify()方法：效果和toString基本相同，对于undefined、function、Symbol、循环引用的对象都不符合JSON结构标准，JSON无法处理他们</p>
+  <p>2.1，在对象中遇到undefined、function、symbol、时将自动忽略，在数组中则会返回null</p>
+  <xmp>
+    console.log(JSON.stringify(a),JSON.stringify(b),JSON.stringify(c),JSON.stringify(d))
+    // 1 true {} "123"
+    console.log(JSON.stringify(e),JSON.stringify(f),JSON.stringify(g),JSON.stringify(h))
+    // undefined undefined '[1,null,null,4]' '{"a":2}'
+  </xmp>
+  <p>2.2如果对象中定义了toJSON方法，JSON字符串则会优先调用该方法</p>
+  <p>2.3JSON可以传递第二个参数replacer，可以是函数或者数组，用来指定对象序列化过程中哪些属性应该被处理，哪些应该被排除</p>
+  <p>2.4JSON还有一个可选参数space，为正整数时指定每一级缩进的字符数，此时最前面的十个字符被用于每一级的缩进</p>
+  <p>3.String方法，</p>
+</body>
+
+</html>
+<script>
+  const a = 1
+  const b = true
+  const c = {}
+  const d = '123'
+  const e = undefined
+  const f = function () { }
+  const g = [1, undefined, function () { }, 4]
+  const h = { a: 2, b: function () { } }
+  // toString 字符串转换
+  console.log(a.toString(), b.toString(), c.toString(), d.toString()) // 1 true [object Object] 123
+  // JSON.stringify()方法转换
+  console.log(JSON.stringify(a), JSON.stringify(b), JSON.stringify(c), JSON.stringify(d)) // '1' 
+  console.log(JSON.stringify(e), JSON.stringify(f), JSON.stringify(g), JSON.stringify(h)) // '1' 
+  // JSON.stringify toJSON方法
+  var j1 = {}
+  // 循环引用
+  var j2 = { b: 42, c: j1, d: function () { } }
+  j1.e = j2
+  // Converting circular structure to JSON 报错
+  // JSON.stringify(j2)
+  j2.toJSON = function () {
+    // 使用箭头函数 指向window
+    console.log(this, 'aaa')
+    return { b: this.b }
+  }
+  console.log(JSON.stringify(j2)) // {b:42}
+  // replacer
+  var j3 = { a: 42, b: 42, c: [1, 2, 3] }
+  // 只格式化指定key值的属性 其他忽略
+  console.log(JSON.stringify(j3, ['a', 'b'])) // {"a":42,"b":42}
+  // 只返回 k!== 'c'
+  console.log(JSON.stringify(j3, function (k, v) {
+    if (k !== 'c') return v
+  })) // {"a":42,"b":42}
+  // 可选参数 space 数字
+  console.log(JSON.stringify(j3, null, 3))
+  /*
+  {
+   "a": 42,
+   "b": 42,
+   "c": [
+      1,
+      2,
+      3
+   ]
+  }
+  */
+  // 可选参数 space 字符串
+  console.log(JSON.stringify(j3, null, '---'))
+  /*
+    {
+    ---"a": 42,
+    ---"b": 42,
+    ---"c": [
+    ------1,
+    ------2,
+    ------3
+    ---]
+    }
+  */
+</script>
