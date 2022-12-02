@@ -1,0 +1,24 @@
+<!--
+ * @Author: luo xi
+ * @Date: 2022-12-02 11:38:11
+ * @LastEditTime: 2022-12-02 11:46:24
+ * @LastEditors: luo xi
+ * @Description: 参考文献：https://zhuanlan.zhihu.com/p/133906695
+ * @FilePath: /KeepCoding/javascript/2-事件循环/1.什么是事件循环.html
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>1.什么是event loop：JS的执行机制就可以看做是一个主线程加上一个任务队列(task queue)。
+    同步任务就是放在主线程上执行的任务，异步任务是放在任务队列中的任务。所有的同步任务在主线程上执行，
+    形成一个执行栈;异步任务有了运行结果就会在任务队列中放置一个事件；脚本运行时先依次运行执行栈，
+    然后会从任务队列里提取事件，运行任务队列中的任务，这个过程是不断重复的，所以又叫做事件循环(Event loop)。</p>
+</body>
+</html>
