@@ -1,7 +1,7 @@
 /*
  * @Author: luo xi
  * @Date: 2022-04-30 22:40:43
- * @LastEditTime: 2022-11-30 21:43:19
+ * @LastEditTime: 2022-12-28 22:58:01
  * @LastEditors: luo xi
  * @Description:
  * @FilePath: /KeepCoding/pnpmvue/packages/components/timeFlip/index.js
@@ -9,7 +9,9 @@
  */
 import { install } from "@iep-plus/utils/install";
 import flip from "./src/timeFlip.vue";
+import timeFlipBlock from "./src/time.vue";
 
 const timeFlip = install(flip);
-export { timeFlip };
+const timeBlock = install(timeFlipBlock);
+export { timeFlip, timeBlock };
 export default timeFlip;

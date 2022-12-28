@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-04-30 22:41:49
- * @LastEditTime: 2022-11-30 23:41:27
+ * @LastEditTime: 2022-12-28 23:30:38
  * @LastEditors: luo xi
  * @Description: 参考https://juejin.cn/post/7169852766452613150
  * @FilePath: /KeepCoding/pnpmvue/packages/components/timeFlip/src/timeFlip.vue
@@ -24,24 +24,26 @@
       :class="[ns.b('digital'), ns.m('back'), ns.b('number' + nextCount)]"
     ></div>
   </div>
-  <button @click="flipDown">向下翻+1</button>
-  <button @click="flipUp">向上翻-1</button>
+  <!-- <button @click="flipDown">向下翻+1</button> -->
+  <!-- <button @click="flipUp">向上翻-1</button> -->
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useNamespace } from "@iep-plus/hooks";
+import flip from "./timeFlip.js";
+
 // import iconProps from "./icon";
 // 使用unplugin-vue-define-options 来注册组件
 defineOptions({
   name: "TimeFlip",
   inheritAttrs: false,
 });
-// const props = defineProps(iconProps);
+const props = defineProps(flip);
 // 当前数字0
-const count = ref(0);
+const count = ref(props.count);
 // 下一个数字 1
-const nextCount = ref(1);
+const nextCount = ref(props.curCount);
 // 是否正在翻转
 const isFlipping = ref(false);
 // 向上翻还是向下
@@ -68,11 +70,21 @@ const flipUp = () => {
     return;
   }
   isTopFlip.value = true;
-  nextCount.value = count.value <= 0 ? 9 : count.value - 1;
+  nextCount.value = count.value >= 9 ? 0 : count.value + 1;
+  // nextCount.value = count.value <= 0 ? 9 : count.value - 1;
   isFlipping.value = true;
   setTimeout(function () {
     isFlipping.value = false;
   }, 1000);
   count.value = nextCount.value;
 };
+
+watch(
+  props,
+  () => {
+    console.log(props);
+    flipUp();
+  },
+  { deep: true}
+);
 </script>
