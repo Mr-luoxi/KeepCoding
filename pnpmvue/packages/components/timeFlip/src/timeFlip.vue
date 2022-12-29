@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-04-30 22:41:49
- * @LastEditTime: 2022-12-29 21:44:36
+ * @LastEditTime: 2022-12-29 21:47:20
  * @LastEditors: luo xi
  * @Description: 参考https://juejin.cn/post/7169852766452613150
  * @FilePath: /KeepCoding/pnpmvue/packages/components/timeFlip/src/timeFlip.vue
@@ -50,7 +50,14 @@ const isFlipping = ref(false);
 const isTopFlip = ref(props.isTopFlip);
 
 const ns = useNamespace("flip");
-const style = computed(() => {});
+const style = computed(() => {
+  return {
+    height: props.height + "px",
+    lineHeight: props.height + "px",
+    width: props.width + "px",
+    fontSize: props.fontSize + "px",
+  };
+});
 // 向下翻+1
 // const flipDown = () => {
 //   if (isFlipping.value) {
@@ -83,6 +90,6 @@ watch(
   () => {
     flipUp();
   },
-  { deep: true}
+  { deep: true }
 );
 </script>
