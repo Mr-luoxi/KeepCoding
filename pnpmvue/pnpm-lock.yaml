@@ -84,7 +84,10 @@ importers:
       rollup-plugin-vue: registry.npmmirror.com/rollup-plugin-vue/6.0.0_@vue+compiler-sfc@3.2.45
 
   packages/components:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.7
+    dependencies:
+      dayjs: registry.npmmirror.com/dayjs/1.11.7
 
   packages/theme-chalk:
     specifiers: {}
@@ -2618,6 +2621,12 @@ packages:
     dependencies:
       es5-ext: registry.npmmirror.com/es5-ext/0.10.62
       type: registry.npmmirror.com/type/1.2.0
+    dev: false
+
+  registry.npmmirror.com/dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.7.tgz}
+    name: dayjs
+    version: 1.11.7
     dev: false
 
   registry.npmmirror.com/debug/2.6.9:
