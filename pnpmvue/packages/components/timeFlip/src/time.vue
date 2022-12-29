@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-12-28 22:51:30
- * @LastEditTime: 2022-12-29 21:09:59
+ * @LastEditTime: 2022-12-29 21:27:04
  * @LastEditors: luo xi
  * @Description: 
  * @FilePath: /KeepCoding/pnpmvue/packages/components/timeFlip/src/time.vue
@@ -9,14 +9,14 @@
 -->
 <template>
   <div :class="[ns.b()]">
-    <TimeFlip :count="count[0]" :curCount="curCount[0]"></TimeFlip>
-    <TimeFlip :count="count[1]" :curCount="curCount[1]"></TimeFlip>
+    <TimeFlip :count="count[0]" :maxCount="2"></TimeFlip>
+    <TimeFlip :count="count[1]" :maxCount="9"></TimeFlip>
     <span>:</span>
-    <TimeFlip :count="count[2]" :curCount="curCount[2]"></TimeFlip>
-    <TimeFlip :count="count[3]" :curCount="curCount[3]"></TimeFlip>
+    <TimeFlip :count="count[2]" :maxCount="6"></TimeFlip>
+    <TimeFlip :count="count[3]" :maxCount="9"></TimeFlip>
     <span>:</span>
-    <TimeFlip :count="count[4]" :curCount="curCount[4]"></TimeFlip>
-    <TimeFlip :count="count[5]" :curCount="curCount[5]"></TimeFlip>
+    <TimeFlip :count="count[4]" :maxCount="6"></TimeFlip>
+    <TimeFlip :count="count[5]" :maxCount="9"></TimeFlip>
   </div>
 </template>
 
@@ -61,6 +61,7 @@ function getTime() {
   count.value[3] = Number(minute[1]);
   count.value[4] = Number(second[0]);
   count.value[5] = Number(second[1]);
+  console.log(count.value,'a')
 }
 getTime();
 
