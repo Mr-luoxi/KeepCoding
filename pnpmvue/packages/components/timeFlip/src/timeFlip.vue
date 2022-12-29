@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-04-30 22:41:49
- * @LastEditTime: 2022-12-29 21:32:24
+ * @LastEditTime: 2022-12-29 21:44:36
  * @LastEditors: luo xi
  * @Description: 参考https://juejin.cn/post/7169852766452613150
  * @FilePath: /KeepCoding/pnpmvue/packages/components/timeFlip/src/timeFlip.vue
@@ -72,10 +72,10 @@ const flipUp = () => {
   nextCount.value = props.count;
   // nextCount.value = count.value <= 0 ? 9 : count.value - 1;
   isFlipping.value = true;
+  count.value = nextCount.value;
   setTimeout(function () {
     isFlipping.value = false;
-  }, 500);
-  count.value = nextCount.value;
+  }, 900);
 };
 
 watch(
