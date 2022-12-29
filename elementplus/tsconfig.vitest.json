@@ -1,0 +1,11 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.node.json",
+  "include": ["packages", "vitest.setup.ts"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["DOM"],
+    "types": ["node"],
+    "jsx": "preserve"
+  }
+}

@@ -1,10 +1,10 @@
 /*
  * @Author: luo xi
  * @Date: 2022-05-04 16:51:54
- * @LastEditTime: 2022-07-08 15:26:53
- * @LastEditors: luoxi
+ * @LastEditTime: 2022-12-29 22:21:48
+ * @LastEditors: luo xi
  * @Description: 
- * @FilePath: /pnpmvue/build/gulpfile.babel.js
+ * @FilePath: /KeepCoding/pnpmvue/build/gulpfile.babel.js
  * 可以输入预定的版权声明、个性签名、空行等
  */
 // 打包方式 串行{series} 并行{parallel}
@@ -29,9 +29,9 @@ import {
  * 6. 发布组件
  */
 export default series(
-  // withTaskName('clean', async() => run('pnpm run clean')), // 删除dist目录
+  withTaskName('clean', async() => run('pnpm run clean')), // 删除dist目录
   // 并行执行packages目录下的build脚本
-  // parallel(runTask('buildFullEntry')),
+  parallel(runTask('buildFullEntry')),
   // 并行执行packages目录下的components脚本
   parallel(runTask('buildModules'))
 );

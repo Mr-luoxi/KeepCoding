@@ -1,0 +1,1 @@
+{"version":3,"file":"version2.mjs","sources":["../../../packages/element-plus/version.ts"],"sourcesContent":["export const version = '0.0.0-dev.1'\n"],"names":[],"mappings":"AAAY,MAAC,OAAO,GAAG;;;;"}

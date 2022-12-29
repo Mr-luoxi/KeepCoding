@@ -1,0 +1,2 @@
+import jiti from "file:///Users/luoxi/Downloads/1-%E5%9F%B9%E8%AE%AD%E5%87%86%E5%A4%87%E6%96%87%E6%A1%A3/element-plus-dev/node_modules/.pnpm/jiti@1.13.0/node_modules/jiti/lib/index.js";
+export default jiti(null, { interopDefault: true })('/Users/luoxi/Downloads/1-培训准备文档/element-plus-dev/internal/build-utils/src/index');
