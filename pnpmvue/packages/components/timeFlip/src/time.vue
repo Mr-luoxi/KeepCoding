@@ -1,7 +1,7 @@
 <!--
  * @Author: luo xi
  * @Date: 2022-12-28 22:51:30
- * @LastEditTime: 2022-12-29 21:07:53
+ * @LastEditTime: 2022-12-29 21:09:59
  * @LastEditors: luo xi
  * @Description: 
  * @FilePath: /KeepCoding/pnpmvue/packages/components/timeFlip/src/time.vue
@@ -38,6 +38,7 @@ const count = ref([]);
 const curCount = ref([1, 2, 3, 4, 5, 6]);
 const nowTime = ref(new Date());
 const ns = useNamespace("time");
+let timer = null;
 
 function getTime() {
   const hour = nowTime.value.getHours().toString().split("");
@@ -64,10 +65,15 @@ function getTime() {
 getTime();
 
 onMounted(() => {
-  setInterval(() => {
+  timer = setInterval(() => {
     nowTime.value = new Date();
     getTime();
   }, 1000);
+});
+
+onBeforeUnmount(() => {
+  clearInterval(timer);
+  timer = null;
 });
 
 console.log(dayjs(new Date()).format("hh:mm:ss"));
