@@ -1,7 +1,7 @@
 /*
  * @Author: luo xi
  * @Date: 2023-01-11 21:05:15
- * @LastEditTime: 2023-01-11 23:25:03
+ * @LastEditTime: 2023-01-12 00:04:50
  * @LastEditors: luo xi
  * @Description:
  * @FilePath: /KeepCoding/vuepress-starter/docs/.vuepress/client.js
@@ -10,7 +10,7 @@
 import { defineClientConfig } from "@vuepress/client";
 // import Home from "./Layouts/Home.vue";
 // import List from "./Layouts/List.vue";
-import Layout from "./Layouts/Layout.vue";
+// import Layout from "./Layouts/Layout.vue";
 
 export default defineClientConfig({
   extends: '@vuepress/theme-default',
@@ -20,7 +20,7 @@ export default defineClientConfig({
   layouts: {
     // Home,
     // List,
-    Layout,
+    // Layout,
   },
   rootComponents: [],
 });

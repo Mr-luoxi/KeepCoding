@@ -1,7 +1,7 @@
 /*
  * @Author: luo xi
  * @Date: 2023-01-11 21:04:37
- * @LastEditTime: 2023-01-11 21:49:22
+ * @LastEditTime: 2023-01-12 00:14:37
  * @LastEditors: luo xi
  * @Description:
  * @FilePath: /KeepCoding/vuepress-starter/docs/.vuepress/config.js
@@ -50,22 +50,44 @@ export default defineUserConfig({
       selectLanguageName: "简体中文",
     },
   },
-  theme: localTheme({
+  theme: defaultTheme({
     selectLanguageText: "I18N",
     locales: {
-      "en-US": {
-        navbar: [
-          {
-            text: "HOME",
-            link: "/",
-          },
-        ],
-        colorModeSwitch: true,
-        colorMode: "dark",
-        logo: "http://rongapi.cn/images/logo.png",
-        repo: "http://gitee.org/vuejs/vuepress",
-        repoLabel: "Source",
+      "/": {
+        // navbar
+        // navbar: navbarEn,
+        // sidebar
+        sidebar: {
+          "/React": [
+            {
+              text: "Guide",
+              children: ["/guide/README.md", "/guide/getting-started.md"],
+            },
+          ],
+          "/react": [
+            {
+              text: "Reference",
+              children: ["/reference/cli.md", "/reference/config.md"],
+            },
+          ],
+        },
+        // page meta
+        editLinkText: "Edit this page on GitHub",
       },
+
+      // "en-US": {
+      //   navbar: [
+      //     {
+      //       text: "HOME",
+      //       link: "/",
+      //     },
+      //   ],
+      //   colorModeSwitch: true,
+      //   colorMode: "dark",
+      //   logo: "http://rongapi.cn/images/logo.png",
+      //   repo: "http://gitee.org/vuejs/vuepress",
+      //   repoLabel: "Source",
+      // },
     },
     // 默认主题配置
     navbar: [
@@ -73,25 +95,10 @@ export default defineUserConfig({
         text: "首页",
         link: "/",
       },
-    ],
-    sidebar: [
-      // SidebarItem
       {
-        text: "使用教程",
-        link: "/使用教程/",
-        children: [
-          // SidebarItem
-          {
-            text: "第一篇",
-            link: "/使用教程/first.md",
-            //   children: [],
-          },
-          // 字符串 - 页面文件路径
-          // '/foo/bar.md',
-        ],
+        text: "react",
+        link: "/react",
       },
-      // 字符串 - 页面文件路径
-      "/经验分享/first.md",
     ],
   }),
 });
