@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "info": "vuepress info"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.51"
+  },
+  "dependencies": {
+    "@vuepress/plugin-toc": "next"
+  }
+}
