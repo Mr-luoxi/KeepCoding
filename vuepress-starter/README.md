@@ -1,11 +1,11 @@
 <!--
  * @Author: luoxi
  * @Date: 2023-01-13 14:04:37
- * @LastEditTime: 2023-01-13 14:06:34
+ * @LastEditTime: 2023-01-13 14:37:19
  * @LastEditors: luoxi
  * @Description: 
 -->
 插件指南：
-## react：
+## react：className //动态样式处理  react-spring/web //弹簧动画  @use-gesture/react /监听滚动 触摸 手势等
 ### 动画插件
 - react-spring
