@@ -1,18 +1,3 @@
-<!--
- * @Author: luo xi
- * @Date: 2023-01-11 21:25:11
- * @LastEditTime: 2023-01-11 22:41:45
- * @LastEditors: luo xi
- * @Description: 
- * @FilePath: /KeepCoding/vuepress-starter/docs/README.md
- * 可以输入预定的版权声明、个性签名、空行等
--->
-<style>
-    h2 {
-        color:yellow
-    }
-</style>
-
 ---
 lang: zh-CN
 title: 页面的标题
