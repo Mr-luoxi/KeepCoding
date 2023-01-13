@@ -1,7 +1,7 @@
 /*
  * @Author: luo xi
  * @Date: 2023-01-11 21:04:37
- * @LastEditTime: 2023-01-13 10:31:21
+ * @LastEditTime: 2023-01-13 10:53:54
  * @LastEditors: luoxi
  * @Description:
  * @FilePath: /KeepCoding/vuepress-starter/docs/.vuepress/config.js
@@ -58,16 +58,14 @@ export default defineUserConfig({
         // navbar: navbarEn,
         // sidebar
         sidebar: {
-          "/next": [
-            {
-              text: "Guide",
-              children: ["/guide/README.md", "/guide/getting-started.md"],
-            },
-          ],
           "/react": [
             {
               text: "Reference",
-              children: ["/reference/cli.md", "/reference/config.md"],
+              children: ["/react/README.md"],
+            },
+            {
+              text: "next",
+              children: ["/react/next/README.md"],
             },
           ],
         },
@@ -98,6 +96,18 @@ export default defineUserConfig({
       {
         text: "react",
         link: "/react",
+      },
+      {
+        text: "vue",
+        link: "/vue",
+      },
+      {
+        text: "css",
+        link: "/css",
+      },
+      {
+        text: "html",
+        link: "/html",
       },
     ],
   }),
