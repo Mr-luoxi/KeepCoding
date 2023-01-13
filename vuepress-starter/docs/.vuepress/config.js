@@ -1,8 +1,8 @@
 /*
  * @Author: luo xi
  * @Date: 2023-01-11 21:04:37
- * @LastEditTime: 2023-01-12 00:14:37
- * @LastEditors: luo xi
+ * @LastEditTime: 2023-01-13 10:31:21
+ * @LastEditors: luoxi
  * @Description:
  * @FilePath: /KeepCoding/vuepress-starter/docs/.vuepress/config.js
  * 可以输入预定的版权声明、个性签名、空行等
@@ -58,7 +58,7 @@ export default defineUserConfig({
         // navbar: navbarEn,
         // sidebar
         sidebar: {
-          "/React": [
+          "/next": [
             {
               text: "Guide",
               children: ["/guide/README.md", "/guide/getting-started.md"],
