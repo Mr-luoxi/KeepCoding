@@ -1,7 +1,7 @@
 /*
  * @Author: luo xi
  * @Date: 2023-01-11 21:04:37
- * @LastEditTime: 2023-01-13 10:53:54
+ * @LastEditTime: 2023-01-14 11:49:31
  * @LastEditors: luoxi
  * @Description:
  * @FilePath: /KeepCoding/vuepress-starter/docs/.vuepress/config.js
@@ -68,6 +68,21 @@ export default defineUserConfig({
               children: ["/react/next/README.md"],
             },
           ],
+          "/tools": [
+            {
+              text: "gulp",
+              children: [
+                {
+                  text: "hello",
+                  link: "/tools/gulp/README.md",
+                },
+              ],
+            },
+            {
+              text: "rollup",
+              children: ["/tools/rollup/README.md"],
+            },
+          ],
         },
         // page meta
         editLinkText: "Edit this page on GitHub",
@@ -92,6 +107,25 @@ export default defineUserConfig({
       {
         text: "首页",
         link: "/",
+      },
+      {
+        text: "tools",
+        link: "/tools",
+        children: [
+          {
+            text: "Always active",
+            link: "/",
+            // 该元素将一直处于激活状态
+            // activeMatch: "/",
+          },
+          {
+            text: "Active on /foo/",
+            link: "/tools/gulp/",
+            // 该元素在当前路由路径是 /foo/ 开头时激活
+            // 支持正则表达式
+            // activeMatch: "^/tools/",
+          },
+        ],
       },
       {
         text: "react",
